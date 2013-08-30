@@ -1,6 +1,7 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+	<link rel="image_src" href="http://dulemba.com/Blogstuff/ColoringPageTuesdays/LibraryMouse-med.jpg" />
     <title>LibraryMouse.js Demo</title>
     <style>
         body{
@@ -102,6 +103,16 @@
             font-weight: bold;
             font-size: 12pt;
         }
+		#github{
+            width:100%;
+			text-align: center;
+			float: left;
+			margin-top: 15px;
+			height: 10px;
+			font-size: 16pt;
+            color: #3AF;
+            font-family: 'Pacifico', sans-serif;
+		}
 
     </style>
     <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
@@ -147,6 +158,7 @@
             <input type="checkbox" checked="true" onclick="toggleEvent(this)" name="mouseout">mouseout <br/>
         </div>
     </div>
+	<div id="github"><a href="https://github.com/sunmockyang/LibraryMouse">View on GitHub!</a></div>
     <div id="specs">
         <div class="details">
             This library is designed to help implement callbacks for mouse events for a single element, and get the coordinates relative to the element's position.
@@ -195,7 +207,7 @@
         </div>
     </div>
 </div>
-<div style="text-align:center; width:100%; float: left;"><br/><a href="http://sunmock.com">Sunmock Yang, August 2013</a></div>
+<div style="text-align:center; width:100%; float: left; font-family: 'Pacifico', sans-serif;"><br/><a href="http://sunmock.com">Sunmock Yang, August 2013</a></div>
 
     <script>
         var element, handler;
