@@ -158,7 +158,7 @@
             <input type="checkbox" checked="true" onclick="toggleEvent(this)" name="mouseout">mouseout <br/>
         </div>
     </div>
-	<div id="github"><a href="https://github.com/sunmockyang/LibraryMouse">View on GitHub!</a></div>
+	<div id="github"><a href="https://github.com/sunmockyang/LibraryMouse">View on GitHub!</a> | <a href="../LibraryMouse.js">LibraryMouse.js</a> </div>
     <div id="specs">
         <div class="details">
             This library is designed to help implement callbacks for mouse events for a single element, and get the coordinates relative to the element's position.
@@ -220,11 +220,11 @@
             handler.addEventListener("rightclick", preventDefaultEvent);
             handler.addEventListener("mouseup", defaultEvent);
             handler.addEventListener("leftmouseup", defaultEvent);
-            handler.addEventListener("middlemouseup", defaultEvent);
+            handler.addEventListener("middlemouseup", preventDefaultEvent);
             handler.addEventListener("rightmouseup", preventDefaultEvent);
             handler.addEventListener("mousedown", defaultEvent);
             handler.addEventListener("leftmousedown", defaultEvent);
-            handler.addEventListener("middlemousedown", defaultEvent);
+            handler.addEventListener("middlemousedown", preventDefaultEvent);
             handler.addEventListener("rightmousedown", preventDefaultEvent);
             handler.addEventListener("doubleclick", defaultEvent);
             handler.addEventListener("mousewheel", preventDefaultEvent);
@@ -262,7 +262,7 @@
         function toggleEvent(e){
             console.log(e.checked);
             if(e.checked){
-                _event = (e.name == "rightclick" || e.name == "rightmouseup" || e.name == "rightmousedown" || e.name == "mousewheel") ? preventDefaultEvent : defaultEvent;
+                _event = (e.name == "rightclick" || e.name == "rightmouseup" || e.name == "rightmousedown" || e.name == "mousewheel" || e.name == "middlemouseup" || e.name == "middlemousedown") ? preventDefaultEvent : defaultEvent;
                 handler.addEventListener(e.name, _event);
             }
             else{
