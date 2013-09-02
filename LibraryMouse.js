@@ -198,7 +198,7 @@ LibraryMouse.prototype.addEventContainer = function (obj) {
                 "mousewheel",
                 "mouseover", "mouseout", "mousemove"];
 
-    for (var i = 0; i < funcs; i++) {
+    for (var i = 0; i < funcs.length; i++) {
         if (obj[funcs[i]])
             this.addEventListener(funcs[i], obj[funcs[i]]);
     }
