@@ -3,6 +3,8 @@ LibraryMouse
 
 JavaScript library to handle mouse events and calculate mouse coordinates relative to a HTML element.
 
+Online demo: http://sunmock.com/projects/LibraryMouse/demo/
+
 ##Events
 
 The types of events that can be used on an element are:
