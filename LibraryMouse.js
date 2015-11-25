@@ -171,12 +171,12 @@ function LibraryMouse(element) {
                 eMove = callback;
                 break;
         }
-        var temp = (override === null) ? type : override;
-        _toggleEventListener(add, temp, this[temp]);
+        
+        type = (override === null) ? type : override;
+        _toggleEventListener(add, type, this[type]);
     }
 
     function _toggleEventListener(add, type, callback) {
-        console.log(add, type);
         if (add) _this.element.addEventListener(type, callback);
         else _this.element.removeEventListener(type, callback);
     }
@@ -211,20 +211,8 @@ LibraryMouse.prototype.setElement = function (element, isStatic) {
 }
 
 LibraryMouse.prototype.getOffset = function() {
-    var _x = 0;
-    var _y = 0;
-    var element = this.element;
-
-    if (element.offsetParent) {
-        do {
-            _x += element.offsetLeft;
-            _y += element.offsetTop;
-        } while (element = element.offsetParent);
-    }
-
-    this.elementX = _x;
-    this.elementY = _y;
-    return { y: _y, x: _x };
+    var bounds = this.element.getBoundingClientRect();
+    return { y: bounds.top, x: bounds.left };
 }
 
 LibraryMouse.prototype.update = function (e) {
